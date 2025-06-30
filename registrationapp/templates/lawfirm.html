@@ -1,0 +1,60 @@
+{% include 'base1.html' %}
+{%block content%}
+<div class="container mt-3">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="row p-5 bg-success-subtle "
+                style="background-image:radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.650), rgba(0, 0, 0, 0.650)),  url(../static/images/background.webp); background-size: cover;background-position: center;">
+                <h1 class=" p-5 " style="  color: white;text-align: center;font-size: xxx-large;font-family: 'remixicon';font-weight: 800;text-decoration-line: underline;
+    text-decoration-style: double;text-decoration-thickness: from-font;  ">"Guiding to the law with clarity
+                    andstrength"</h1>
+            </div>
+
+            <div class="row p-5 mt-3" style="border: 2px solid black">
+                <h1 class=" p-3" style="text-align:left;font-size: xxx-large;font-family: 'remixicon';font-weight: 800;text-decoration-line: underline;
+    text-decoration-style: double;text-decoration-thickness: from-font;  ">Cases we Undertake :</h1>
+
+                <div class="row">
+                    {% for lawfirms in lawfirm %}
+                    <div class="card card-body col-md-5 m-1"
+                        style="border-radius: 2%;border:2px solid black ;height: 40vh;overflow: hidden;background-color: rgba(236, 231, 222, 0.847)">
+                        <div class="row ">
+                            <div class="col-md-5 ">
+                                {% if lawfirms.case_image %}
+                                <img src="{{ lawfirms.case_image.url }}" width="220" height="260" alt="no img"
+                                    style="border-radius:6% ; " />
+                                {% endif %}
+                            </div>
+                            <div class="col-md-7">
+                                <p
+                                    style="font-size: x-large;font-weight: 600;font-family:'Times New Roman', Times, serif;text-decoration: underline">
+                                    {{lawfirms.case_title }}</p>
+                                <p
+                                    style="font-size: large;font-weight:300;text-align: justify;font-family:'Times New Roman', Times, serif;line-height: 2.5vh;">
+
+                                    {{lawfirms.case_description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="row w-100 " style="padding-left: 13vw; margin-top: 5vh;">
+
+                    <a class="btn btn-light mt-3" href="{% url 'enquiry' %}"
+                        style="font-weight: 500;margin-inline:3vw;padding-inline: 5vw;width: max-content;font-family: 'Times New Roman', Times, serif;font-size: x-large;border: 2px solid black">
+                        Make an
+                        Enquiry</a>
+                    <a class="btn btn-light mt-3" href="{% url 'appointment' %}"
+                        style="font-weight: 500;margin-inline:3vw;padding-inline: 5vw;width: max-content;font-family: 'Times New Roman', Times, serif;font-size: x-large;border: 2px solid black">
+                        Book an
+                        appointment</a>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+{% include 'footer.html' %}

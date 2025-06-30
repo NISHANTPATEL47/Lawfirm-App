@@ -1,0 +1,146 @@
+{% include 'base1.html' %}
+{%block content%}
+    <div class="container mt-3">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="row p-5 bg-success-subtle "
+                    style="background-image:radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.650), rgba(0, 0, 0, 0.650)),  url(../static/images/background.webp); background-size: cover;background-position: center;">
+                    <h1 class=" p-5 " style="  color: white;text-align: center;font-size: xxx-larger;font-family: 'remixicon';font-weight: 800;text-decoration-line: underline;
+    text-decoration-style: double;text-decoration-thickness: from-font;  ">"Booking form"</h1>
+                </div>
+                <div class="row p-5 mt-3" style="border: 2px solid black">
+                    {% if registered %}
+                    <h3 >Your Booking is done.</h3>
+                    <h3>Please wait for the further schedule.</h3>
+                    {% else %}
+                    <form enctype="multipart/form-data" method="POST">
+                        {% csrf_token%}
+                        <div class="row py-2 ">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <h4 class="col-md-4"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        Name : </h4>
+                                    <h4 class="col-md-8"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        {{form.name}}</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <h4 class="col-md-4"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        Phone : </h4>
+                                    <h4 class="col-md-8"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        {{form.phone}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <h4 class="col-md-4"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        Email : </h4>
+                                    <h4 class="col-md-8"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        {{form.email}}</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <h4 class="col-md-4"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        Address : </h4>
+                                    <h4 class="col-md-8"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        {{form.address}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <h4 class="col-md-4"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        Case Type : </h4>
+                                    <h4 class="col-md-8"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        {{form.case_type}}</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <h4 class="col-md-4"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        Description : </h4>
+                                    <h4 class="col-md-8"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        {{form.description}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <h4 class="col-md-4"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        Case Doc : </h4>
+                                    <h4 class="col-md-8"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        {{form.casedoc}}</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <h4 class="col-md-4"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        Total no of Hearing : </h4>
+                                    <h4 class="col-md-8"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        {{form.total_no_of_hearing}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <h4 class="col-md-4"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        Court Name : </h4>
+                                    <h4 class="col-md-8"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        {{form.court_name}}</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <h4 class="col-md-4"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        Fees : </h4>
+                                    <h4 class="col-md-8"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                        {{form.fees}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <input type="submit" value="Book an Appointment"
+                                        style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    {% endif %}
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+{%endblock%}
+{% include 'footer.html' %}

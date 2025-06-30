@@ -1,0 +1,57 @@
+{% include 'base1.html' %}
+{%block content%}
+    <div class="container mt-3">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="row p-5 bg-success-subtle "
+                    style="background-image:radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.650), rgba(0, 0, 0, 0.650)),  url(../static/images/background.webp); background-size: cover;background-position: center;">
+                    <h1 class=" p-5 " style="  color: white;text-align: center;font-size: xxx-large;font-family: 'remixicon';font-weight: 800;text-decoration-line: underline;
+    text-decoration-style: double;text-decoration-thickness: from-font;  ">"Guiding to the law with clarity
+                        andstrength"</h1>
+                </div>
+
+                <div class="row p-5 mt-3" style="border: 2px solid black">
+                    <h1 class=" p-3" style="text-align:left;font-size: xxx-large;font-family: 'remixicon';font-weight: 800;text-decoration-line: underline;
+    text-decoration-style: double;text-decoration-thickness: from-font;  ">Lawyer's Details :</h1>
+
+                    {% for lawyer in lawyers %}
+                    <div class="col-md-6 px-0">
+                        <div class="card card-body m-1 "
+                            style="border-radius: 2%;border: 2px solid black;height:60vh;overflow: hidden; background-color: rgba(236, 231, 222, 0.847);">
+                            <div class="row">
+                                <div class="row d-flex justify-content-center align-items-center gap-2">
+                                    <div class="col-md-5 p-0" style="width:200px; height: 240px;overflow: hidden">
+                                        {% if lawyer.image %}
+                                        <img src="{{ lawyer.image.url }}" alt="no img"
+                                            style="border-radius:6%;width:200px; height: 240px;background-position: center;" />
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-md-7"
+                                        style="height:250px ;font-size: medium;font-weight: 600; padding: 10px 15px 0px 10px;font-family:'Times New Roman', Times, serif ">
+                                        <h3
+                                            style="font-size: x-large;font-weight: 600;font-family: 'remixicon';text-decoration: underline;text-transform: capitalize; padding-bottom: 20px; ">
+                                            {{ lawyer.name }}</h3>
+                                        <p style="font-size:large;">Email: {{ lawyer.email }}</p>
+                                        <p style="font-size: large;">Experience: {{ lawyer.yearofexperience }} years
+                                        </p>
+                                        <p style="font-size: large;">Specialization: {{ lawyer.specialization }}</p>
+                                        <p style="font-size: large;">Total Cases: {{ lawyer.totalcases }}</p>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <p
+                                        style="font-size: large;font-family:'Times New Roman', Times, serif ;font-weight: 600;text-align: justify;">
+                                        {{lawyer.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    {%endblock%}
+    {% include 'footer.html' %}

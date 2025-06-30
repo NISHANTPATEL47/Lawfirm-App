@@ -1,0 +1,204 @@
+{% include 'base.html' %}
+{%block content%}
+<style>
+    th,
+    td,
+    tr {
+        border: 1px solid black;
+        padding: 10px;
+    }
+</style>
+<div class="container mt-3 ">
+    <div class="jumbotron">
+        <div class="row p-5 mt-3" style="border: 2px solid black">
+            <h1 class=" p-3" style="text-align:left;font-size: xx-large;font-family: 'remixicon';font-weight: 800;text-decoration-line: underline;
+    text-decoration-style: double;text-decoration-thickness: from-font;  ">User Details :</h1>
+
+            <div class="row">
+                <div class="col-md-8 ">
+                    <div class="card card-body pt-4 px-5"
+                        style="border:2px solid black;height:auto ;font-family: 'Times New Roman', Times, serif;">
+                        <div class="row justify-content-center align-items-center g-2">
+                            <div class="col-md-4">
+                                <h5 style="font-weight: 700;">User: </h5>
+                            </div>
+                            <div class="col-md-8">
+                                <h5>{{user.username}}</h5>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center align-items-center g-2">
+                            <div class="col-md-4">
+                                <h5 style="font-weight: 700;">Email: </h5>
+                            </div>
+                            <div class="col-md-8">
+                                <h5>{{user.username}}</h5>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center align-items-center g-2">
+                            <div class="col-md-4">
+                                <h5 style="font-weight: 700;">Phone No: </h5>
+                            </div>
+                            <div class="col-md-8">
+                                <h5>{{user.userprofile.phone}}</h5>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center align-items-center g-2">
+                            <div class="col-md-4">
+                                <h5 style="font-weight: 700;">Address: </h5>
+                            </div>
+                            <div class="col-md-8">
+                                <h5>{{user.userprofile.address}}</h5>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center align-items-center g-2">
+                            <div class="col-md-4">
+                                <h5 style="font-weight: 700;">Street: </h5>
+                            </div>
+                            <div class="col-md-8">
+                                <h5>{{user.userprofile.street}}</h5>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center align-items-center g-2">
+                            <div class="col-md-4">
+                                <h5 style="font-weight: 700;">City: </h5>
+                            </div>
+                            <div class="col-md-8">
+                                <h5>{{user.userprofile.city}}</h5>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center align-items-center g-2">
+                            <div class="col-md-4">
+                                <h5 style="font-weight: 700;">State: </h5>
+                            </div>
+                            <div class="col-md-8">
+                                <h5>{{user.userprofile.state}}</h5>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center align-items-center g-2">
+                            <div class="col-md-4">
+                                <h5 style="font-weight: 700;">Zipcode: </h5>
+                            </div>
+                            <div class="col-md-8">
+                                <h5>{{user.userprofile.zipcode}}</h5>
+                            </div>
+                        </div>
+
+                        <a class="btn btn-info mt-3" href="{% url 'update' %}"
+                            style="font-family: 'Times New Roman', Times, serif;font-size: large;"> Update</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card card-body" style="border:2px solid black ;height:48vh">
+                        {% if user.userprofile.profile_pic %}
+                        <img src="{{ user.userprofile.profile_pic.url }}" height=100% alt="no img">
+                        {% else %}
+                        <p>No profile pic</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <h1 class=" p-3" style="text-align:left;font-size: xx-large;font-family: 'remixicon';font-weight: 800;text-decoration-line: underline;
+    text-decoration-style: double;text-decoration-thickness: from-font;  ">My Appointment :</h1>
+                <div class="card card-body pt-4 mx-2"
+                    style="border:2px solid black;font-family: 'Times New Roman', Times, serif; font-size: large;">
+
+                    <!-- <table style="width: 100%;">
+                        <thead>
+                            <tr style="border-bottom:1px solid black;">
+                                <th>Case Id</th>
+                                <th>Case Type</th>
+                                <th>Case Desc</th>
+                                <th>Court Name</th>
+                                <th>Lawyer Name</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Fees</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for casemanagements in casemanagement %}
+                            <tr>
+                                <td>
+                                    {{forloop.counter}}.
+
+                                </td>
+                                <td style="width: 10vw; text-transform: capitalize;">
+                                </td>
+                                <td style="width: 15vw;line-height: 3vh;text-align:justify;">
+                                </td>
+                                <td style="width: 10vw;text-transform: capitalize;">
+                                </td>
+                                <td>
+                                    {{casemanagements.lawyer.name}}
+                                </td>
+                                <td>
+                                    {{casemanagements.date}}
+                                    
+                                </td>
+                                <td>
+                                    {{casemanagements.time}}
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            <tr>
+                            </tr>
+                        </tbody>
+                    </table> -->
+                    <div class="container appt-section">
+                        <h2><i class="bi bi-calendar-event"></i> All Appointments</h2>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Case ID</th>
+                                        <th>Case Type</th>
+                                        <th>Description</th>
+                                        <th>Court</th>
+                                        <th>Lawyer</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Fee</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in appointment %}
+                                    <tr>
+                                        <td>{{ forloop.counter }}</td>
+                                        <td>{{ i.case_type }}</td>
+                                        <td>{{ i.description }}</td>
+                                        <td>{{ i.court_name }}</td>
+                                        {% with i.appointments.first as case %}
+                                        {% if case %}
+                                        <td>{{ case.lawyer.name }}</td>
+                                        <td>{{ case.date }}</td>
+                                        <td>{{ case.time }}</td>
+                                        {% else %}
+                                        <td colspan="3" class="text-center text-muted">No case data</td>
+                                        {% endif %}
+                                        {% endwith %}
+                                        <td>₹{{ i.fees }}</td>
+                                    </tr>
+                                    {% empty %}
+                                    <tr>
+                                        <td colspan="8" class="text-center text-muted">No appointments found.</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{%endblock%}
+{% include 'footer.html' %}

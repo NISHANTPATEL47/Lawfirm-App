@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{%block content%}
+<br>
+<div class="container">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="row p-5 bg-success-subtle "
+                style="background-image:radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.650), rgba(0, 0, 0, 0.650)),  url(../static/images/background.webp); background-size: cover;background-position: center;">
+                <h1 class=" p-5 " style="  color: white;text-align: center;font-size: xxx-larger;font-family: 'remixicon';font-weight: 800;text-decoration-line: underline;
+    text-decoration-style: double;text-decoration-thickness: from-font;  ">"Login Form"</h1>
+            </div>
+            <div class="row p-5 mt-3" style="border: 2px solid black">
+                <form method="POST" action="{% url 'login'%}">
+                    {% csrf_token%}
+
+                    <div class=" form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="Username"
+                            placeholder="Username"
+                            style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;" />
+                        <label for="floatingInput"
+                            style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">Username</label>
+                    </div>
+                    <div class=" form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" name="Password"
+                            placeholder="Password"
+                            style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;" />
+                        <label for="floatingPassword"
+                            style="font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">Password</label>
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Login"
+                            style="margin-top: 5vh;font-size: larger;font-weight: 600;font-family:'Times New Roman', Times, serif;">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
