@@ -16,35 +16,46 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg " style="background-color: rgba(236, 231, 222, 0.847); border-bottom: 1px solid black;">
+    <nav class="navbar navbar-expand-lg"
+        style="background-color:#1a1f36; border-bottom: 2px solid #444; padding: 0.5rem 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
         <div class="container-fluid mx-3">
             {%if user.is_authenticated %}
-            <h4 class="navbar-brand mt-2" href="" style="text-align:left;font-size: larger;font-family: 'remixicon';font-weight: 800;text-decoration-line: underline;
-    text-decoration-style: double;text-decoration-thickness: from-font;  ">LAWFIRM</h4>
+            <h4 class="navbar-brand mt-2" href=""
+                style="font-size: 1.7rem; font-family: Georgia, serif; font-weight: bold; color: #d4af37; ">
+                ⚖️ LawFirmPro
+            </h4>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 "
-                    style="font-family:'remixicon';font-size:larger;display: flex; justify-content: space-around;align-items: center; width:20vw;">
+
+             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"
+                    style="font-size: 1.05rem; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: space-around; align-items: center; width: 30vw;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home'%}"><i
-                                class="ri-home-4-line"></i> Home</a>
+                        <a class="nav-link active " aria-current="page" href="{% url 'home' %}"
+                            style="font-weight: 500;color: #dcdcdc;">
+                            <i class="ri-home-4-line"></i> Home
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'lawfirm'%}"><i class="ri-scales-3-fill"></i> Advocate</a>
+                        <a class="nav-link active " aria-current="page" href="{% url 'lawfirm' %}"
+                            style="font-weight: 500;color: #dcdcdc;">
+                            <i class="ri-scales-3-fill"></i> Advocate
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'lawyers'%}"></i> Lawyers</a>
-                    </li>
+                        <a class="nav-link active " aria-current="page" href="{% url 'lawyers' %}"
+                            style="font-weight: 500;color: #dcdcdc;">Lawyers
+                        </a></li>
 
                 </ul>
             </div>
             <h5
                 class="user border px-3 py-2 border-2 rounded-5 border-primary text-primary-emphasis bg-body font-monospace">
-                {{user.username}}</h5>
+                Welcome, {{user.username}}</h5>
             {%endif%}
         </div>
 
