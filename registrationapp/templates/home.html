@@ -2,9 +2,57 @@
 {%block content%}
 <div class="container mt-3">
     <div class="jumbotron">
-        <div class="card card-body pt-4 px-5"
-            style="border:2px solid black;height:65vh ;font-family: 'Times New Roman', Times, serif;">
-            <h1>Welcome to home page</h1>
+        <div class="card card-body" style="border:2px solid black;font-family: 'Times New Roman', Times, serif;">
+            <div style="padding: 2rem; font-family: 'Segoe UI', sans-serif;">
+
+
+                <h1 style="font-size: 2rem; color: #1a1f36; text-align: center; margin-bottom: 1.5rem;">
+                    Welcome to LawFirmPro
+                </h1>
+
+                <p style="text-align: center; font-size: 1.1rem; color: #2c3e50; line-height: 1.8;">
+                    At LawFirmPro, we provide comprehensive legal services tailored for automobile-related
+                    concerns
+                    and general law practices. Our experienced lawyers handle everything from accident claims and
+                    traffic
+                    violations to property disputes, tax cases, and criminal defense.
+                </p>
+
+                <div
+                    style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-top: 2.5rem; gap: 1rem;">
+                    <div
+                        style="flex: 1 1 45%; padding: 1.5rem; background-color: #ecf0f1; border-left: 4px solid #182e44; border-radius: 6px;">
+                        <h4 style="color: #34495e;">Our Practice Areas</h4>
+                        <ul style="list-style-type: disc; padding-left: 1.2rem; color: #2c3e50;">
+                            <li>Tax & GST Law</li>
+                            <li>Criminal Defense</li>
+                            <li>Family & Divorce Law</li>
+                            <li>Property & Civil Disputes</li>
+                            <li>POCSO & Child Protection</li>
+                            <li>Constitutional Law</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        style="flex: 1 1 45%; padding: 1.5rem; background-color: #ecf0f1; border-left: 4px solid #182e44; border-radius: 6px;">
+                        <h4 style="color: #34495e;">Why Choose Us?</h4>
+                        <ul style="list-style-type: disc; padding-left: 1.2rem; color: #2c3e50;">
+                            <li>Expert Legal Guidance</li>
+                            <li>Transparent Process</li>
+                            <li>Over 10+ Years of Experience</li>
+                            <li>Client-Centered Approach</li>
+                            <li>Cost-Effective Services</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="{% url 'lawfirm' %}"
+                        style="display: inline-block; padding: 0.8rem 2rem; background-color: #182e44; color: #ffffff; text-decoration: none; border-radius: 5px; font-weight: 600; transition: background-color 0.3s;">
+                        View Our Legal Services
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
